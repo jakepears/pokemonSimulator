@@ -80,5 +80,9 @@ export function selectPokemon(pokemonIndex) {
 	console.log('this is not working', pokemonIndex);
 	localStorage.setItem('selectedPokemonIndex', JSON.stringify(pokemonIndex));
 	console.log('Selected Pokémon Index:', pokemonIndex);
-	window.location.href = '/battleScene/index.html';
+	if (window.location.href.includes('pokemonSimulator')) {
+		window.location.href = '/pokemonSimulator/battleScene/index.html';
+	} else {
+		window.location.href = '/battleScene/index.html';
+	}
 }
